@@ -3377,7 +3377,7 @@ MonoBehaviour:
   connector: {fileID: 1488887346}
   swingDistance: 1.5
   swingSpeed: 200
-  wallSpacing: 0.5
+  wallSpacing: 0.2
   environment:
     serializedVersion: 2
     m_Bits: 8

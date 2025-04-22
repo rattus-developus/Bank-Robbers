@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(pivot, (desiredPos - pivot).normalized, swingDistance, environment);
                 if(hit)
                 {
-                    red.transform.position = hit.point - ((hit.point - (Vector2)blue.transform.position).normalized * wallSpacing);
+                    red.transform.position = hit.point + (hit.normal * wallSpacing);
                 }
                 else red.transform.position = desiredPos;
             }
@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(pivot, (desiredPos - pivot).normalized, swingDistance, environment);
                 if(hit)
                 {
-                    blue.transform.position = hit.point - ((hit.point - (Vector2)red.transform.position).normalized * wallSpacing);
+                    blue.transform.position = hit.point + (hit.normal * wallSpacing);
                 }
                 else blue.transform.position = desiredPos;
             }
@@ -107,7 +107,6 @@ public class Movement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(pivot, (desiredPos - pivot).normalized, swingDistance, environment);
         if(hit)
         {
-            Debug.Log("HIT: " + hit.point);
             blue.transform.position = hit.point;
         }
         else blue.transform.position = desiredPos;
